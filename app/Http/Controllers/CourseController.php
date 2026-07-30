@@ -17,7 +17,7 @@ class CourseController extends Controller
             'course'=>$courses
         ]);
     }
-    }
+    
 /** 
  * Create metodini yaratayabmiz, bu metod kurs yaratish sahifasini ko'rsatadi.
  */
@@ -30,5 +30,5 @@ class CourseController extends Controller
      */
   
 
-
+}
 
