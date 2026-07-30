@@ -97,21 +97,24 @@
     <!-- Courses Grid -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            @forelse($course as $item)
             <!-- Course Card -->
             <div class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
-                <div class="relative h-48 bg-gradient-to-br from-indigo-500 to-purple-600">
+                <div class="relative h-48" style="background-image: url('{{ $item->image ? asset('storage/'.$item->image) : asset('images/no-image.png') }}'); background-size: cover; background-position: center;">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
                     <div class="absolute top-4 right-4">
                         <span class="bg-white/90 backdrop-blur-sm text-indigo-600 text-xs font-bold px-3 py-1.5 rounded-full">Faol</span>
                     </div>
                     <div class="absolute bottom-4 left-4 right-4">
-                        <h3 class="text-xl font-bold text-white">Web Dasturlash</h3>
-                        <p class="text-sm text-white/80 mt-1">Full Stack Development</p>
+                 <h3 class="text-xl font-bold text-white">
+    {{ $item->title }}
+</h3>
+                        <p class="text-sm text-white/80 mt-1">{{$item->description}}</p>
                     </div>
                 </div>
                 <div class="p-6">
                     <p class="text-gray-600 text-sm line-clamp-2 mb-4">
-                        Zamonaviy web texnologiyalarni o'rganing. HTML, CSS, JavaScript, React, Node.js va boshqalar.
+  {{$item->description}}
                     </p>
                     <div class="flex items-center gap-4 mb-4">
                         <div class="flex items-center gap-1 text-sm text-gray-500">
@@ -132,139 +135,31 @@
                             <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
                             <span class="text-sm font-medium text-gray-700">Abdulla Qodirov</span>
                         </div>
-                        <span class="text-lg font-bold text-indigo-600">1,500,000 so'm</span>
+                        <span class="text-lg font-bold text-indigo-600">{{$item->price}} so'm</span>
                     </div>
                     <div class="mt-4 pt-4 border-t border-gray-100 flex gap-2">
-                        <a href="#" class="flex-1 text-center text-sm font-medium text-indigo-600 hover:text-indigo-700 py-2 rounded-lg hover:bg-indigo-50 transition-colors duration-200">
-                            Batafsil
-                        </a>
+                    <a href="{{ route('course.show', $item->id) }}"
+   class="flex-1 text-center text-sm font-medium text-indigo-600 hover:text-indigo-700 py-2 rounded-lg hover:bg-indigo-50 transition-colors duration-200">
+    Batafsil
+</a>
                         <button class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium py-2 rounded-lg transition-all duration-200 shadow-lg shadow-indigo-500/25">
                             Ro'yxatdan o'tish
                         </button>
                     </div>
                 </div>
             </div>
+@empty
+<div class="col-span-3 text-center py-10">
+    <h2>Kurslar mavjud emas</h2>
+</div>
+@endforelse
+    
 
-            <!-- Course Card 2 -->
-            <div class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
-                <div class="relative h-48 bg-gradient-to-br from-emerald-500 to-teal-600">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-                    <div class="absolute top-4 right-4">
-                        <span class="bg-white/90 backdrop-blur-sm text-emerald-600 text-xs font-bold px-3 py-1.5 rounded-full">Yangi</span>
-                    </div>
-                    <div class="absolute bottom-4 left-4 right-4">
-                        <h3 class="text-xl font-bold text-white">Grafik Dizayn</h3>
-                        <p class="text-sm text-white/80 mt-1">UI/UX Design</p>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 text-sm line-clamp-2 mb-4">
-                        Professional grafik dizayn asoslari, Figma, Adobe Creative Suite va zamonaviy dizayn trendlar.
-                    </p>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="flex items-center gap-1 text-sm text-gray-500">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                            <span>8 hafta</span>
-                        </div>
-                        <div class="flex items-center gap-1 text-sm text-gray-500">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                            </svg>
-                            <span>32 o'quvchi</span>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
-                            <span class="text-sm font-medium text-gray-700">Dilshod Rahimov</span>
-                        </div>
-                        <span class="text-lg font-bold text-indigo-600">1,200,000 so'm</span>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-gray-100 flex gap-2">
-                        <a href="#" class="flex-1 text-center text-sm font-medium text-indigo-600 hover:text-indigo-700 py-2 rounded-lg hover:bg-indigo-50 transition-colors duration-200">
-                            Batafsil
-                        </a>
-                        <button class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium py-2 rounded-lg transition-all duration-200 shadow-lg shadow-indigo-500/25">
-                            Ro'yxatdan o'tish
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Course Card 3 -->
-            <div class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
-                <div class="relative h-48 bg-gradient-to-br from-orange-500 to-red-600">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-                    <div class="absolute top-4 right-4">
-                        <span class="bg-white/90 backdrop-blur-sm text-orange-600 text-xs font-bold px-3 py-1.5 rounded-full">Ommabop</span>
-                    </div>
-                    <div class="absolute bottom-4 left-4 right-4">
-                        <h3 class="text-xl font-bold text-white">Ingliz Tili</h3>
-                        <p class="text-sm text-white/80 mt-1">Business English</p>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 text-sm line-clamp-2 mb-4">
-                        IELTS, TOEFL tayyorgarlik va biznes ingliz tili. Native speaker o'qituvchilar bilan.
-                    </p>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="flex items-center gap-1 text-sm text-gray-500">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                            <span>16 hafta</span>
-                        </div>
-                        <div class="flex items-center gap-1 text-sm text-gray-500">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                            </svg>
-                            <span>78 o'quvchi</span>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                            <div class="w-8 h-8 bg-gray-200 rounded-full"></div>
-                            <span class="text-sm font-medium text-gray-700">John Smith</span>
-                        </div>
-                        <span class="text-lg font-bold text-indigo-600">1,800,000 so'm</span>
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-gray-100 flex gap-2">
-                        <a href="#" class="flex-1 text-center text-sm font-medium text-indigo-600 hover:text-indigo-700 py-2 rounded-lg hover:bg-indigo-50 transition-colors duration-200">
-                            Batafsil
-                        </a>
-                        <button class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium py-2 rounded-lg transition-all duration-200 shadow-lg shadow-indigo-500/25">
-                            Ro'yxatdan o'tish
-                        </button>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!-- Pagination -->
-        <div class="mt-8 flex items-center justify-between">
-            <p class="text-sm text-gray-500">
-                1-3 dan 24 gacha ko'rsatilmoqda
-            </p>
-            <div class="flex items-center gap-2">
-                <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                    Oldingi
-                </button>
-                <button class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors duration-200 shadow-lg shadow-indigo-500/25">
-                    1
-                </button>
-                <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                    2
-                </button>
-                <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                    3
-                </button>
-                <button class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                    Keyingi
-                </button>
-            </div>
-        </div>
+        <div class="mt-8">
+            {{ $course->links() }}  
     </div>
 </div>
 @endsection
