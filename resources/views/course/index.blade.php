@@ -101,7 +101,10 @@
             @forelse($course as $item)
             <!-- Course Card -->
             <div class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
-                <div class="relative h-48" style="background-image: url('{{ $item->image ? asset('storage/'.$item->image) : asset('images/no-image.png') }}'); background-size: cover; background-position: center;">
+<div class="relative h-48"
+style="background-image: url('{{ $item->image ? asset('images/'.$item->image) : asset('images/no-image.png') }}');
+background-size: cover;
+background-position: center;">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
                     <div class="absolute top-4 right-4">
                         <span class="bg-white/90 backdrop-blur-sm text-indigo-600 text-xs font-bold px-3 py-1.5 rounded-full">Faol</span>
