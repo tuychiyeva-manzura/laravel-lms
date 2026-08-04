@@ -61,6 +61,34 @@ class CourseController extends Controller
             'course'=>$course
         ]);
     }
+  public function edit($id)
+    {
+        $course=Course::findOrFail($id);
+        return view('course.edit',[
+            'course'=>$course
+        ]);
+    }
 
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * o'chirish metodini yaratayabmiz, bu metod kursni o'chirish uchun ishlatiladi.
+     */
+public function destroy($id)
+{
+    $course = Course::findOrFail($id);
+
+    $course->delete();
+
+    return redirect()
+        ->route('courses')
+        ->with('success', 'Kurs o‘chirildi');
+}
 }
 
