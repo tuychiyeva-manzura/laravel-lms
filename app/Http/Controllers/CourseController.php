@@ -2,93 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Course;
 
 class CourseController extends Controller
 {
     /**
-     * index metodini yaratayabmiz, bu metod kurslar ro'yxatini ko'rsatadi.
+     * Kurslar ro'yxati
      */
     public function index()
     {
-        $courses=Course::paginate(9);
-        return view('course.index',[
-            'course'=>$courses
+        $courses = Course::paginate(9);
+
+        return view('course.index', [
+            'courses' => $courses
         ]);
     }
-    
-/** 
- * Create metodini yaratayabmiz, bu metod kurs yaratish sahifasini ko'rsatadi.
- */
-    public function create()
-    {
-        return view('course.create');
-    }
-    public function store(Request $request)
-    {
-        $request->validate([
-            'title'=>'required|string|max:255',
-            'description'=>'required|string',
-            'price'=>'required|numeric',
-            'image'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-        ]);
 
-        $course=new Course();
-        $course->title=$request->input('title');
-        $course->description=$request->input('description');
-        $course->price=$request->input('price');
-
-        if($request->hasFile('image')){
-            $image=$request->file('image');
-            $imageName=time().'.'.$image->getClientOriginalExtension();
-            $image->move(public_path('images'),$imageName);
-            $course->image=$imageName;
-        }
-
-        $course->save();
-
-        return redirect()->route('courses')->with('success','Kurs muvaffaqiyatli yaratildi.');
-    }
     /**
-     * Show the form for creating a new resource.
+     * Bitta kurs haqida ma'lumot
      */
-
     public function show($id)
     {
-        $course=Course::findOrFail($id);
-        return view('course.show',[
-            'course'=>$course
+        $course = Course::findOrFail($id);
+
+        return view('course.show', [
+            'course' => $course
         ]);
     }
-  public function edit($id)
-    {
-        $course=Course::findOrFail($id);
-        return view('course.edit',[
-            'course'=>$course
-        ]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * o'chirish metodini yaratayabmiz, bu metod kursni o'chirish uchun ishlatiladi.
-     */
-public function destroy($id)
-{
-    $course = Course::findOrFail($id);
-
-    $course->delete();
-
-    return redirect()
-        ->route('courses')
-        ->with('success', 'Kurs o‘chirildi');
 }
-}
-
