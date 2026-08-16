@@ -26,12 +26,12 @@
                     <a href="{{ route('home') }}" class="px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('home') ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:text-blue-600' }}">
                         Bosh sahifa
                     </a>
-                    <a href="/about" class="px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('about') ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:text-blue-600' }}">
+               <
+               <a href="{{ route('about') }}" class="px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('about') ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:text-blue-600' }}">
                         Biz haqimizda
                     </a>
-                    <a href="/services" class="px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('services') ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:text-blue-600' }}">
-                        Xizmatlar
-                    </a>
+                   
+                   
                     <a href="/contact" class="px-3 py-2 rounded-md text-sm font-medium {{ request()->routeIs('contact') ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:text-blue-600' }}">
                         Aloqa
                     </a>

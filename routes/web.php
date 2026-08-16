@@ -18,7 +18,8 @@ Route::get('/courses', [CourseController::class, 'index'])
 
 Route::get('/courses/{id}', [CourseController::class, 'show'])
     ->name('course.show');
-
+Route::get('/contact', [AboutController::class, 'index'])
+    ->name('contact');
 
 /*
 |--------------------------------------------------------------------------
