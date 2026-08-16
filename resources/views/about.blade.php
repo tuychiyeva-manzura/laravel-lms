@@ -1,81 +1,210 @@
-<section id="features" class="py-24 bg-gray-50 relative overflow-hidden">
-    <!-- Decorative Elements -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-100 rounded-full blur-3xl opacity-30"></div>
+@extends('layouts.app')
 
-    <div class="relative max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-            <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider bg-blue-50 px-4 py-2 rounded-full">Nima Uchun Biz</span>
-            <h2 class="text-4xl md:text-5xl font-bold mt-6 mb-4 text-gray-900">
-                Nega Aynan
-                <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">EduSpace?</span>
+@section('title', 'EduSpace - Biz Haqimizda')
+
+@section('content')
+
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-indigo-900 to-blue-900">
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
+        <div class="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 py-24 lg:py-32">
+        <div class="text-center max-w-4xl mx-auto">
+    <h1 class="text-5xl lg:text-6xl font-bold text-white mb-6">
+    Biz Haqimizda
+</h1>
+
+<p class="text-xl text-blue-100/80 mb-10 max-w-3xl mx-auto leading-relaxed">
+    EduSpace — bilim olish, rivojlanish va kelajak uchun yangi imkoniyatlar yaratadigan ta'lim platformasi.
+</p>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+
+
+<!-- Mission & Vision -->
+<section class="bg-gradient-to-b from-gray-50 to-white py-20">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Mission -->
+            <div class="bg-white rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-shadow duration-300">
+                <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3v18h18"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 13l4-4 4 4 5-5"/>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Bizning Missiyamiz</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    {{$about->description}}
+                </p>
+                <ul class="mt-6 space-y-3">
+                    <li class="flex items-center gap-3">
+                        <span class="text-green-500">✓</span>
+                        <span class="text-gray-700">Amaliyotga yo'naltirilgan ta'lim</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-green-500">✓</span>
+                        <span class="text-gray-700">Individual yondashuv</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-green-500">✓</span>
+                        <span class="text-gray-700">Doimiy qo'llab-quvvatlash</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Vision -->
+            <div class="bg-white rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-shadow duration-300">
+                <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                    <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Bizning Qarashlarimiz</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Markaziy Osiyodagi eng ilg'or onlayn ta'lim platformasiga aylanish. Biz 2030-yilgacha
+                    100,000+ mutaxassis tayyorlashni va mintaqamizda raqamli iqtisodiyotni rivojlantirishni
+                    maqsad qilganmiz.
+                </p>
+                <ul class="mt-6 space-y-3">
+                    <li class="flex items-center gap-3">
+                        <span class="text-purple-500">★</span>
+                        <span class="text-gray-700">Innovatsion metodologiyalar</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-purple-500">★</span>
+                        <span class="text-gray-700">Xalqaro hamkorlik</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="text-purple-500">★</span>
+                        <span class="text-gray-700">Texnologik yetakchilik</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="bg-white py-20">
+    <div class="max-w-7xl mx-auto px-4">
+
+        <!-- Section Title -->
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-gray-900">
+                Bizning <span class="text-blue-600">Qadriyatlarimiz</span>
             </h2>
-            <p class="text-gray-500 text-lg max-w-2xl mx-auto">
-                Bizning platformamiz orqali siz nafaqat bilim olasiz, balki haqiqiy loyihalar ustida ishlab, portfolio yaratasiz
+
+            <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                Bizning faoliyatimizni boshqarib turadigan asosiy tamoyillar.
             </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Feature 1 -->
-            <div class="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-blue-500/10 transform hover:-translate-y-2 transition-all duration-500 border border-gray-100 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div class="relative">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-lg shadow-blue-500/30">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Sifatli Video Darslar</h3>
-                    <p class="text-gray-600 leading-relaxed">4K sifatda, professional montaj qilingan, amaliy mashg'ulotlar bilan boyitilgan video darslar to'plami.</p>
-                </div>
-            </div>
+        @php
+            $values = [
+                [
+                    'title' => "Sifatli Ta'lim",
+                    'description' => "Eng yuqori standartlarga javob beradigan o'quv dasturlari",
+                    'bg' => 'from-blue-50',
+                    'iconBg' => 'bg-blue-600',
+                    'icon' => '
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 14l9-5-9-5-9 5 9 5z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                    ',
+                ],
+                [
+                    'title' => 'Innovatsiya',
+                    'description' => "Doimiy yangilanish va zamonaviy texnologiyalarni qo'llash",
+                    'bg' => 'from-purple-50',
+                    'iconBg' => 'bg-purple-600',
+                    'icon' => '
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    ',
+                ],
+                [
+                    'title' => 'Hamjamiyat',
+                    'description' => "O'quvchilar va mentorlar o'rtasida mustahkam aloqalar",
+                    'bg' => 'from-indigo-50',
+                    'iconBg' => 'bg-indigo-600',
+                    'icon' => '
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    ',
+                ],
+                [
+                    'title' => 'Ishonch',
+                    'description' => "Shaffoflik va halollik bizning asosiy tamoyilimiz",
+                    'bg' => 'from-green-50',
+                    'iconBg' => 'bg-green-600',
+                    'icon' => '
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    ',
+                ],
+            ];
+        @endphp
 
-            <!-- Feature 2 -->
-            <div class="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-purple-500/10 transform hover:-translate-y-2 transition-all duration-500 border border-gray-100 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100 to-pink-100 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div class="relative">
-                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-lg shadow-purple-500/30">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Real Loyihalar</h3>
-                    <p class="text-gray-600 leading-relaxed">Har bir kursda 3-5 ta real loyiha ustida ishlaysiz. Portfolio yaratib, mijozlarga tayyor bo'lasiz.</p>
-                </div>
-            </div>
+        <!-- Values -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-            <!-- Feature 3 -->
-            <div class="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl hover:shadow-green-500/10 transform hover:-translate-y-2 transition-all duration-500 border border-gray-100 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-100 to-emerald-100 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div class="relative">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300 shadow-lg shadow-green-500/30">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            @foreach ($values as $value)
+
+                <div class="text-center p-6 bg-gradient-to-b {{ $value['bg'] }} to-white rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+
+                    <!-- Icon -->
+                    <div class="w-20 h-20 {{ $value['iconBg'] }} rounded-full flex items-center justify-center mx-auto mb-4">
+
+                        <svg
+                            class="w-10 h-10 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            {!! $value['icon'] !!}
                         </svg>
+
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Sertifikat</h3>
-                    <p class="text-gray-600 leading-relaxed">Kursni muvaffaqiyatli tugatganingizdan so'ng, ish beruvchilar tan oladigan rasmiy sertifikat olasiz.</p>
+
+                    <!-- Title -->
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">
+                        {{ $value['title'] }}
+                    </h3>
+
+                    <!-- Description -->
+                    <p class="text-gray-600">
+                        {{ $value['description'] }}
+                    </p>
+
                 </div>
-            </div>
+
+            @endforeach
+
         </div>
-    </div>
-</section>
 
-<!-- CTA Section -->
-<section class="py-20 bg-gradient-to-r from-blue-600 to-indigo-700 relative overflow-hidden">
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-10"></div>
-    <div class="relative max-w-4xl mx-auto text-center px-4">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-            O'rganishni Hoziroq Boshlang
-        </h2>
-        <p class="text-xl text-blue-100 mb-10">
-            5000 dan ortiq o'quvchilar qatoriga qo'shiling va kariyerangizda yangi bosqichga qadam qo'ying
-        </p>
-        <a href="{{ route('courses') }}"
-           class="inline-flex items-center gap-3 bg-white text-blue-700 px-10 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
-            Bepul Boshlash
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-            </svg>
-        </a>
     </div>
 </section>
+<!-- Custom Animations -->
+<style>
+@keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+.animate-blob { animation: blob 7s infinite; }
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+</style>
+
+@endsection
