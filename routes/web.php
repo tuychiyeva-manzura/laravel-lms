@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Admin\CourseController as AdminCourseController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | User Panel
@@ -17,7 +18,8 @@ Route::get('/courses', [CourseController::class, 'index'])->name('courses');
 
 Route::get('/courses/{id}', [CourseController::class, 'show'])->name('course.show');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
-
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 /*
 |--------------------------------------------------------------------------
 | Admin Panel
