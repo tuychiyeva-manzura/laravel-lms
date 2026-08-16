@@ -11,14 +11,7 @@
 
     <div class="relative max-w-7xl mx-auto px-4 py-28 lg:py-36">
         <div class="text-center max-w-4xl mx-auto">
-            <!-- Badge -->
-            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 mb-8 border border-white/20">
-                <span class="relative flex h-3 w-3">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-                </span>
-                <span class="text-green-300 text-sm font-medium">5000+ O'quvchilar bizni tanlagan</span>
-            </div>
+
 
             <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-8 leading-tight">
                 Kelajagingizni
@@ -50,20 +43,10 @@
                     Batafsil Ma'lumot
                 </a>
             </div>
-
-            <!-- Stats -->
-     
         </div>
     </div>
-
-    <!-- Wave Divider -->
-
 </section>
 
-<!-- Features Section -->
-
-
-<!-- Custom Animations -->
 <style>
 @keyframes blob {
     0% { transform: translate(0px, 0px) scale(1); }
