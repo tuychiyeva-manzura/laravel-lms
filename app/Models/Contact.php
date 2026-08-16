@@ -13,5 +13,5 @@ class Contact extends Model
         'message'
     ];
 }
-    $table->timestamps();
-});
+ 
+
