@@ -42,9 +42,7 @@
                     </svg>
                 </div>
                 <h2 class="text-3xl font-bold text-gray-900 mb-4">Bizning Missiyamiz</h2>
-                <p class="text-gray-600 leading-relaxed">
-                    {{$about->description}}
-                </p>
+              
                 <ul class="mt-6 space-y-3">
                     <li class="flex items-center gap-3">
                         <span class="text-green-500">✓</span>

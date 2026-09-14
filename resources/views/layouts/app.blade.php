@@ -56,9 +56,7 @@
                 <a href="/about" class="block px-3 py-2 rounded-md text-base font-medium {{ request()->routeIs('about') ? 'bg-blue-50 text-blue-600' : 'text-gray-600' }}">
                     Biz haqimizda
                 </a>
-                <a href="/services" class="block px-3 py-2 rounded-md text-base font-medium {{ request()->routeIs('services') ? 'bg-blue-50 text-blue-600' : 'text-gray-600' }}">
-                    Xizmatlar
-                </a>
+          
                 <a href="/contact" class="block px-3 py-2 rounded-md text-base font-medium {{ request()->routeIs('contact') ? 'bg-blue-50 text-blue-600' : 'text-gray-600' }}">
                     Aloqa
                 </a>
